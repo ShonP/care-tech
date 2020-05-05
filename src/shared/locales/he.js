@@ -1,1 +1,1 @@
-export default { shon: "קקי" }
+export default { whoWeAre: "מי אנחנו", "he-IL": "עברית", en: "אנגלית" }

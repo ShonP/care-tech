@@ -10,23 +10,22 @@ const Wrapper = styled.div`
   top: 100%;
   width: 100%;
   background-color: ${({ theme }) => theme.colors.darkPrimary};
-  z-index: 2;
+  z-index: 3;
   box-shadow: 0 8px 6px -6px black;
 `
 
-const Menu = ({ items, onChange, isMenu, value }) =>
-  console.log(isMenu) || (
-    <Wrapper isMenu={isMenu}>
-      {items.map((item, idx) => (
-        <Item
-          key={idx}
-          isSelected={item === value}
-          onClick={() => onChange(item)}
-        >
-          {item.label}
-        </Item>
-      ))}
-    </Wrapper>
-  )
+const Menu = ({ items, onChange, isMenu, value }) => (
+  <Wrapper isMenu={isMenu}>
+    {items.map((item, idx) => (
+      <Item
+        key={idx}
+        isSelected={item === value}
+        onClick={() => onChange(item)}
+      >
+        {item.label}
+      </Item>
+    ))}
+  </Wrapper>
+)
 
 export default Menu

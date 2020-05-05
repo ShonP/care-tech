@@ -1,2 +1,5 @@
 import colors from "./colors"
-export default { colors }
+
+const sizes = { siteSpace: "4rem", navbar: "4rem" }
+
+export default { colors, sizes }

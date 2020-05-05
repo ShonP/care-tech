@@ -5,17 +5,16 @@ const selectedCss = css`
 `
 
 const Item = styled.div`
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-right: 1.2rem;
+  padding-left: 1.2rem;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   color: ${({ theme }) => theme.colors.white};
-  font-size: 18px;
   cursor: pointer;
   position: relative;
-  height: 60px;
+  height: ${({ theme }) => theme.sizes.navbar};
 
   &:hover {
     ${selectedCss}

@@ -9,11 +9,11 @@ import Menu from "./Menu"
 
 const Icon = styled(FontAwesomeIcon)`
   &&& {
-    width: 30px;
-    height: 30px;
+    width: 2rem;
+    height: 2rem;
   }
   &:first-child {
-    margin-right: 6px;
+    margin-right: 0.4rem;
   }
 `
 
@@ -44,7 +44,7 @@ const LanguagePicker = () => {
         closeMenu()
       })
     },
-    [i18n]
+    [i18n,closeMenu]
   )
   const itemRef = useRef()
 

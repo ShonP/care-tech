@@ -3,7 +3,7 @@ import { createGlobalStyle, css } from "styled-components"
 const defaultStyles = css`
   margin: 0px;
   font-family: "Barlow", "Helvetica", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   position: relative;
 `
 
@@ -20,6 +20,7 @@ const globalStyles = css`
 
   html {
     overflow-y: scroll;
+    font-size: 16px;
   }
 
   html,

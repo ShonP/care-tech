@@ -1,9 +1,10 @@
-import React, { useState, useMemo, useCallback } from "react"
+import React, { useState, useRef, useMemo, useCallback } from "react"
 import _Item from "./Item"
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useTranslation } from "react-i18next"
 import { faLanguage, faGlobe } from "@fortawesome/free-solid-svg-icons"
+import useClickoutside from "../../hooks/useClickoutside"
 import Menu from "./Menu"
 
 const Icon = styled(FontAwesomeIcon)`
@@ -32,15 +33,28 @@ const LanguagePicker = () => {
   )
   const value = useMemo(() => items.find(v => v.value === i18n.language), [
     items,
+    i18n.language,
   ])
-  const onChange = useCallback(val => {
-    i18n.changeLanguage(val.value)
-  }, [])
+
+  const closeMenu = useCallback(() => setIsMenu(false), [setIsMenu])
+
+  const onChange = useCallback(
+    val => {
+      i18n.changeLanguage(val.value).then(() => {
+        closeMenu()
+      })
+    },
+    [i18n]
+  )
+  const itemRef = useRef()
+
+  useClickoutside(itemRef, closeMenu)
+
   return (
-    <Item isMenu={isMenu} onClick={() => setIsMenu(e => !e)}>
+    <Item ref={itemRef} isMenu={isMenu} onClick={() => setIsMenu(e => !e)}>
       <Icon icon={faLanguage} />
       <Icon icon={faGlobe} />
-      {isMenu && <Menu items={items} value={value} onChange={onChange}></Menu>}
+      <Menu isMenu={isMenu} items={items} value={value} onChange={onChange} />
     </Item>
   )
 }

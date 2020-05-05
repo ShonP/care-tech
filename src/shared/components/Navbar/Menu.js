@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import _Item from "./Item"
+import Item from "./Item"
 
 const Wrapper = styled.div`
-  display: flex;
+  display: ${({ isMenu }) => (isMenu ? "flex" : "none")};
   flex-direction: column;
   position: absolute;
   left: 0;
@@ -14,20 +14,19 @@ const Wrapper = styled.div`
   box-shadow: 0 8px 6px -6px black;
 `
 
-const Item = styled(_Item)``
-
-const Menu = ({ items, onChange, value }) => (
-  <Wrapper>
-    {items.map((item, idx) => (
-      <Item
-        key={idx}
-        isSelected={item === value}
-        onClick={() => onChange(item)}
-      >
-        {item.label}
-      </Item>
-    ))}
-  </Wrapper>
-)
+const Menu = ({ items, onChange, isMenu, value }) =>
+  console.log(isMenu) || (
+    <Wrapper isMenu={isMenu}>
+      {items.map((item, idx) => (
+        <Item
+          key={idx}
+          isSelected={item === value}
+          onClick={() => onChange(item)}
+        >
+          {item.label}
+        </Item>
+      ))}
+    </Wrapper>
+  )
 
 export default Menu

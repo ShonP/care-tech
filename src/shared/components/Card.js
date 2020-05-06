@@ -113,7 +113,7 @@ const Card = ({ plan, className }) => (
     </Header>
     <Content>
       {plan.discount && <Discount type={plan.type}>{plan.discount}</Discount>}
-      {plan.items && plan.items.map(item => <Item>{item}</Item>)}
+      {plan.items && plan.items.map(item => <Item key={item}>{item}</Item>)}
     </Content>
   </Wrapper>
 )

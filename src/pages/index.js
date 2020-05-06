@@ -24,12 +24,10 @@ const emptyArray = []
 const IndexPage = () => {
   const { i18n } = useTranslation()
   return (
-    <ThemeProvider theme={theme}>
-      <StyleSheetManager
-        stylisPlugins={
-          i18n.dir(i18n.language) === "rtl" ? rtlPlugin : emptyArray
-        }
-      >
+    <StyleSheetManager
+      stylisPlugins={i18n.dir(i18n.language) === "rtl" ? rtlPlugin : emptyArray}
+    >
+      <ThemeProvider theme={theme}>
         <Container>
           <Navbar />
           <GlobalStyle />
@@ -37,8 +35,8 @@ const IndexPage = () => {
           <AboutUs />
           <Pricing />
         </Container>
-      </StyleSheetManager>
-    </ThemeProvider>
+      </ThemeProvider>
+    </StyleSheetManager>
   )
 }
 

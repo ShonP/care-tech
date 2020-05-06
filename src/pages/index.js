@@ -7,7 +7,8 @@ import Navbar from "../shared/components/Navbar"
 import theme from "../shared/theme"
 import GlobalStyle from "../shared/theme/GlobalStyle"
 import Hero from "../shared/components/Hero"
-import Section from "../shared/components/Section"
+import AboutUs from "../shared/components/AboutUs"
+import Pricing from "../shared/components/Pricing"
 import "../shared/services/i18n"
 
 const Container = styled.div`
@@ -31,7 +32,8 @@ const IndexPage = () => {
           <Navbar />
           <GlobalStyle />
           <Hero></Hero>
-          <Section />
+          <AboutUs />
+          <Pricing />
         </Container>
       </StyleSheetManager>
     </ThemeProvider>

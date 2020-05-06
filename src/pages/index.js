@@ -27,7 +27,7 @@ const IndexPage = () => {
     <ThemeProvider theme={theme}>
       <StyleSheetManager
         stylisPlugins={
-          i18next.dir(i18n.language) === "rtl" ? rtlPlugin : emptyArray
+          i18n.dir(i18n.language) === "rtl" ? rtlPlugin : emptyArray
         }
       >
         <Container>

@@ -26,7 +26,9 @@ const IndexPage = () => {
   return (
     <ThemeProvider theme={theme}>
       <StyleSheetManager
-        stylisPlugins={i18n.language === "he-IL" ? rtlPlugin : emptyArray}
+        stylisPlugins={
+          i18next.dir(i18n.language) === "rtl" ? rtlPlugin : emptyArray
+        }
       >
         <Container>
           <Navbar />

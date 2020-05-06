@@ -18,16 +18,18 @@ const Pricing = () => {
   const { t } = useTranslation()
   const plans = [
     {
-      price: `250$`,
+      price: `250₪`,
       title: "Front End",
+      priceInfo:`/ ${t("month")}`,
       items: ["HTML", "CSS", "JS", "React"],
       type: "front",
     },
 
     {
-      price: `300$`,
+      price: `300₪`,
       discount: `50% ${t("discount")}`,
       title: "Full Stack",
+      priceInfo:`/ ${t("month")}`,
       items: [
         "HTML",
         "CSS",
@@ -41,8 +43,9 @@ const Pricing = () => {
       type: "full",
     },
     {
-      price: `350$`,
+      price: `350₪`,
       title: "Back End",
+      priceInfo:`/ ${t("month")}`,
       items: ["NodeJS", "Express", "JS", "MongoDB"],
       type: "back",
     },

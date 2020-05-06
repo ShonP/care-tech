@@ -4,7 +4,6 @@ const defaultStyles = css`
   margin: 0px;
   font-family: "Barlow", "Helvetica", sans-serif;
   font-size: 16px;
-  position: relative;
 `
 
 const globalStyles = css`

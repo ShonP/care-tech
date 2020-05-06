@@ -37,7 +37,6 @@ const Pricing = () => {
         "React",
         "NodeJS",
         "Express",
-        "JS",
         "MongoDB",
       ],
       type: "full",

@@ -1,11 +1,28 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 
 const types = {
   front: "lightPrimary",
   back: "primary",
   full: "darkPrimary",
 }
+
+const circleAn = keyframes`
+  0% { 
+    box-shadow:
+      0px 30px 30px -25px rgba(0,0,0,0.6), 
+      0px 0px 0px 0px rgba(52,175,255,1), 
+      0px 0px 0px 0px rgba(52,175,255,.7),
+      0px 0px 0px 0px rgba(52,175,255,.5);
+  }
+ 100% { 
+   box-shadow:
+     0px 5px 5px -5px rgba(0,0,0,0.6), 
+     0px 0px 0px 10px rgba(52,175,255,0),
+     0px 0px 0px 30px rgba(52,175,255,0),
+     0px 0px 0px 50px rgba(52,175,255,0);
+  }
+  `
 
 const Circle = styled.div`
   width: 120px;
@@ -21,6 +38,37 @@ const Circle = styled.div`
   align-items: center;
   flex-direction: column;
   transition: all 0.4s;
+`
+
+const Point = styled.div`
+  width: 30px;
+  background-color: #34afff;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  border: 7px solid #505050;
+  margin: 0 auto;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.37, 0.26, 0.35, 1);
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    border-top: 3px solid #505050;
+    border-top-style: dotted;
+    width: 90px;
+    top: 8px;
+    transition: transform 300ms ease-in-out;
+    transform: scaleX(0);
+  }
+  &::after {
+    left: 23px;
+    transform-origin: 100% 50%;
+  }
+  &::before {
+    transform-origin: 0 50%;
+    right: 23px;
+  }
 `
 const Wrapper = styled.div`
   transition: 0.4s background-color ease;
@@ -38,6 +86,15 @@ const Wrapper = styled.div`
       box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
       border-width: 5px;
     }
+    ${Point} {
+      animation: ${circleAn} 4s infinite;
+      &::after {
+        transform: scaleX(1);
+      }
+      &::before {
+        transform: scaleX(1);
+      }
+    }
   }
 `
 
@@ -49,6 +106,7 @@ const Header = styled.div`
   background-color: ${({ theme, type }) => theme.colors[types[type]]};
   display: flex;
   flex-direction: column;
+  padding-top: 1rem;
 `
 const Title = styled.div`
   font-size: 24px;
@@ -57,7 +115,6 @@ const Title = styled.div`
   align-items: center;
   color: white;
   position: relative;
-  flex: 1;
 `
 
 const PriceTitle = styled.span`
@@ -106,6 +163,7 @@ const Card = ({ plan, className }) => (
   <Wrapper type={plan.type} className={className}>
     <Header type={plan.type}>
       <Title>{plan.title}</Title>
+      <Point />
       <Circle type={plan.type}>
         <PriceTitle>{plan.price}</PriceTitle>
         <PriceInfo>{plan.priceInfo}</PriceInfo>

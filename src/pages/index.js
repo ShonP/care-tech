@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { ThemeProvider, StyleSheetManager } from "styled-components"
 import stylisRTLPlugin from "stylis-plugin-rtl"
-import i18next from "i18next"
 import { useTranslation } from "react-i18next"
 import styled from "styled-components"
 import Navbar from "../shared/components/Navbar"
@@ -24,19 +23,12 @@ const emptyArray = []
 
 const IndexPage = () => {
   const { i18n } = useTranslation()
-  const [language, setLanguage] = useState(i18n.language)
+  const [stylisPlugins, setStylisPlugins] = useState(emptyArray)
   useEffect(() => {
-    i18next.on("languageChanged", v => {
-      setLanguage(i18n.language)
-    })
-  }, [])
-
+    setStylisPlugins(i18n.dir(i18n.language) === "rtl" ? rtlPlugin : emptyArray)
+  }, [i18n])
   return (
-    <StyleSheetManager
-      stylisPlugins={
-        i18n.dir(language) === "rtl" ? rtlPlugin : emptyArray
-      }
-    >
+    <StyleSheetManager stylisPlugins={stylisPlugins}>
       <ThemeProvider theme={theme}>
         <Container>
           <Navbar />

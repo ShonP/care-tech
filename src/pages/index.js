@@ -26,6 +26,9 @@ const IndexPage = () => {
   const [stylisPlugins, setStylisPlugins] = useState(emptyArray)
   useEffect(() => {
     setStylisPlugins(i18n.dir(i18n.language) === "rtl" ? rtlPlugin : emptyArray)
+    i18n.on("languageChanged", l => {
+      setStylisPlugins(i18n.dir(l) === "rtl" ? rtlPlugin : emptyArray)
+    })
   }, [i18n])
   return (
     <StyleSheetManager stylisPlugins={stylisPlugins}>

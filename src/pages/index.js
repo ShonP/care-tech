@@ -7,7 +7,7 @@ import Navbar from "../shared/components/Navbar"
 import theme from "../shared/theme"
 import GlobalStyle from "../shared/theme/GlobalStyle"
 import Hero from "../shared/components/Hero"
-import AboutUs from "../shared/components/AboutUs"
+import WhatWeLearn from "../shared/components/WhatWeLearn"
 import Pricing from "../shared/components/Pricing"
 import WhatWeDo from "../shared/components/WhatWeDo"
 import "../shared/services/i18n"
@@ -39,7 +39,7 @@ const IndexPage = () => {
           <GlobalStyle />
           <Hero></Hero>
           <WhatWeDo />
-          <AboutUs />
+          <WhatWeLearn />
           <Pricing />
         </Container>
       </ThemeProvider>

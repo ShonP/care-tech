@@ -89,7 +89,7 @@ const WhatWeDo = () => {
       <Header>{t("whatWeDo")}</Header>
       <Cards>
         {cards.map(({ src, header, subHeader }) => (
-          <Card>
+          <Card key={header}>
             <Img src={src}></Img>
             <CardHeader>{header}</CardHeader>
             <SubHeader>{subHeader}</SubHeader>

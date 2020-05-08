@@ -63,9 +63,9 @@ const AboutUs = () => {
         ))}
       </CardsWrapper>
       <Content>
-        <Header>{t("whoWeAre")}</Header>
-        <FirstParagraph>{t("whoWeAreFirstParagraph")}</FirstParagraph>
-        <SecondParagraph>{t("whoWeAreSecondParagraph")}</SecondParagraph>
+        <Header>{t("whatWeLearn")}</Header>
+        <FirstParagraph>{t("whatWeLearnFirstParagraph")}</FirstParagraph>
+        <SecondParagraph>{t("whatWeLearnSecondParagraph")}</SecondParagraph>
       </Content>
       <Image />
     </Section>

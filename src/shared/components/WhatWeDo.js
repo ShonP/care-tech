@@ -82,7 +82,7 @@ const WhatWeDo = () => {
         subHeader: t("communicationTips"),
       },
     ],
-    []
+    [t]
   )
   return (
     <Wrapper>

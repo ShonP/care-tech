@@ -2,12 +2,12 @@ import React from "react"
 import styled from "styled-components"
 import { useTranslation } from "react-i18next"
 import _Section from "./Section"
-import _Card from "./Card"
+import _PricingCard from "./PricingCard"
 
 const Section = styled(_Section)`
   padding-top: 20rem;
 `
-const Card = styled(_Card)`
+const PricingCard = styled(_PricingCard)`
   flex: 1;
   margin-right: 3rem;
   &:last-child {
@@ -52,7 +52,7 @@ const Pricing = () => {
   return (
     <Section>
       {plans.map((plan, idx) => (
-        <Card key={idx} plan={plan} />
+        <PricingCard key={idx} plan={plan} />
       ))}
     </Section>
   )

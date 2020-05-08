@@ -21,7 +21,7 @@ const Item = styled(_Item)`
   background-color: ${({ theme, isMenu }) => isMenu && theme.colors.primary};
 `
 
-const LanguagePicker = () => {
+const LanguagePicker = (props) => {
   const [isMenu, setIsMenu] = useState(false)
   const { t, i18n } = useTranslation()
   const items = useMemo(
@@ -44,14 +44,19 @@ const LanguagePicker = () => {
         closeMenu()
       })
     },
-    [i18n,closeMenu]
+    [i18n, closeMenu]
   )
   const itemRef = useRef()
 
   useClickoutside(itemRef, closeMenu)
 
   return (
-    <Item ref={itemRef} isMenu={isMenu} onClick={() => setIsMenu(e => !e)}>
+    <Item
+      ref={itemRef}
+      isMenu={isMenu}
+      onClick={() => setIsMenu(e => !e)}
+      {...props}
+    >
       <Icon icon={faLanguage} />
       <Icon icon={faGlobe} />
       <Menu isMenu={isMenu} items={items} value={value} onChange={onChange} />

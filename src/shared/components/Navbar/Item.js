@@ -11,11 +11,12 @@ const Item = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ inverse, theme }) =>
+    inverse ? theme.colors.white : theme.colors.black};
   cursor: pointer;
+  transition: all 0.3s;
   position: relative;
   height: ${({ theme }) => theme.sizes.navbar};
-
   &:hover {
     ${selectedCss}
   }

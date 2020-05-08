@@ -1,23 +1,21 @@
 import React from "react"
 import styled from "styled-components"
-import HeroImage from "../../images/Hero.png"
+import enginnerImage from "../../images/enginner.svg"
 import Button from "./Button"
 import { useTranslation } from "react-i18next"
 
 const Wrapper = styled.div`
   display: flex;
+  padding-left: ${({ theme }) => theme.sizes.siteSpace};
+  padding-right: ${({ theme }) => theme.sizes.siteSpace};
+  margin-top: ${({ theme }) => theme.sizes.navbar};
 `
 
 const Content = styled.div`
-  padding-left: ${({ theme }) => theme.sizes.siteSpace};
-  padding-right: ${({ theme }) => theme.sizes.siteSpace};
-  position: absolute;
-  width: 50%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  z-index: 1;
+  flex: 1;
   & > * {
     margin-bottom: 1.5rem;
 
@@ -30,19 +28,20 @@ const Content = styled.div`
 const Header = styled.h1`
   font-size: 3.5rem;
   font-weight: 500;
-  color: white;
+  color: ${({ theme }) => theme.colors.black};
   line-height: 3rem;
 `
 
 const SubHeader = styled.p`
-  color: white;
+  color: ${({ theme }) => theme.colors.gray};
   font-size: 1rem;
   line-height: 3rem;
 `
 
-const Image = styled.img.attrs(() => ({ src: HeroImage }))`
-  width: 100%;
+const Image = styled.img.attrs(() => ({ src: enginnerImage }))`
+  flex: 1.5;
 `
+
 
 const Hero = () => {
   const { t } = useTranslation()
@@ -51,7 +50,7 @@ const Hero = () => {
       <Content>
         <Header>{t("header")}</Header>
         <SubHeader>{t("subHeader")}</SubHeader>
-        <Button>{t("startHere")}</Button>
+        <Button isRound>{t("startHere")}</Button>
       </Content>
       <Image />
     </Wrapper>

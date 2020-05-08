@@ -15,6 +15,9 @@ const Button = styled.div`
   justify-content: center;
   align-items: center;
   transition: 0.3s all;
+  border-radius: ${({ isRound }) => isRound && "50px"};
+  
+  box-shadow: 0 5px 15px -5px rgba(0,0,0,0.7);
   &:hover {
     background-color: ${({ type = "primary", theme }) =>
       theme.colors.darkPrimary};

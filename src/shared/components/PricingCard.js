@@ -158,8 +158,8 @@ const Item = styled.div`
 `
 
 const Check = styled(FontAwesomeIcon).attrs(() => ({ icon: faCheck }))`
-  color: ${({ theme, type }) => theme.colors[types[type]]};
-  margin-right: 1rem;
+  color: green;
+  margin-right: 0.5rem;
 `
 
 const Button = styled(_Button)`

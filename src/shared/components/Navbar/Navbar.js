@@ -50,7 +50,6 @@ const Navbar = () => {
         <LanguagePicker inverse={y > 0} />
         <Item inverse={y > 0}>{t("whatWeDo")}</Item>
         <Item inverse={y > 0}>{t("whatWeLearn")}</Item>
-        <Item inverse={y > 0}>{t("whoWeAre")}</Item>
         <Item inverse={y > 0}>{t("howItWorks")}</Item>
         <Item inverse={y > 0}>{t("talkWithUs")}</Item>
       </ItemsWrapper>

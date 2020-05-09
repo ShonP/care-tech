@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useState } from "react"
+import { Link } from "react-scroll"
 import styled, { css } from "styled-components"
 import { useTranslation } from "react-i18next"
 import Item from "./Item"
@@ -44,14 +45,32 @@ const Logo = styled.div`
 const Navbar = () => {
   const { t } = useTranslation()
   const { y } = useScroll()
+  const [activeLink, setActiveLink] = useState()
+  const items = [
+    t("whatWeDo"),
+    t("whatWeLearn"),
+    t("howItWorks"),
+    t("talkWithUs"),
+  ]
   return (
     <Wrapper isScrolled={y > 0}>
       <ItemsWrapper>
         <LanguagePicker inverse={y > 0} />
-        <Item inverse={y > 0}>{t("whatWeDo")}</Item>
-        <Item inverse={y > 0}>{t("whatWeLearn")}</Item>
-        <Item inverse={y > 0}>{t("howItWorks")}</Item>
-        <Item inverse={y > 0}>{t("talkWithUs")}</Item>
+        {items.map(item => (
+          <Link
+            key={item}
+            to={item}
+            duration={500}
+            onSetActive={() => setActiveLink(item)}
+            spy
+            smooth
+            onSetInactive={() => setActiveLink(null)}
+          >
+            <Item isSelected={activeLink === item} inverse={y > 0}>
+              {item}
+            </Item>
+          </Link>
+        ))}
       </ItemsWrapper>
       <Logo inverse={y > 0}>{`TECH-CARE </>`}</Logo>
     </Wrapper>

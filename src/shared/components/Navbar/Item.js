@@ -3,6 +3,7 @@ import styled, { css } from "styled-components"
 const selectedCss = css`
   background-color: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.white};
+  text-decoration: underline;
 `
 
 const Item = styled.div`

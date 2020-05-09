@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
 import enginnerImage from "../../images/enginner.svg"
-import Button from "./Button"
 import { useTranslation } from "react-i18next"
-import Background from "./Background"
+import Button from "../../shared/components/Button"
+import Background from "../../shared/components/Background"
 
 const Wrapper = styled.div`
   display: flex;

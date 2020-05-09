@@ -1,12 +1,11 @@
 import React, { useMemo } from "react"
-import _Card from "./Card"
+import _Card from "../../shared/components/Card"
 import styled from "styled-components"
+import { useTranslation } from "react-i18next"
 import education from "../../images/education.svg"
 import communication from "../../images/communication.svg"
 import job from "../../images/job.svg"
-import { useTranslation } from "react-i18next"
-
-import Section from './Section'
+import Section from "../../shared/components/Section"
 
 const Card = styled(_Card)`
   height: 30rem;
@@ -84,7 +83,7 @@ const WhatWeDo = () => {
     [t]
   )
   return (
-    <Wrapper>
+    <Wrapper name={t("whatWeDo")}>
       <Header>{t("whatWeDo")}</Header>
       <Cards>
         {cards.map(({ src, header, subHeader }) => (

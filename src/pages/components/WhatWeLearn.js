@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import MiniCard from "./MiniCard"
+import MiniCard from "../../shared/components/MiniCard"
 import { useTranslation } from "react-i18next"
-import _Section from "./Section"
+import _Section from "../../shared/components/Section"
 
 const Section = styled(_Section)`
   background-color: white;
@@ -52,7 +52,7 @@ const SecondParagraph = styled.p`
 const AboutUs = () => {
   const { t } = useTranslation()
   return (
-    <Section>
+    <Section name={t("whatWeLearn")}>
       <CardsWrapper>
         {cards.map(i => (
           <MiniCard key={i} type={i} />

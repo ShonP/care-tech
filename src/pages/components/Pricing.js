@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import { useTranslation } from "react-i18next"
-import _Section from "./Section"
-import _PricingCard from "./PricingCard"
+import _Section from "../../shared/components/Section"
+import _PricingCard from "../../shared/components/PricingCard"
 
 const Section = styled(_Section)`
 `
@@ -57,7 +57,7 @@ const Pricing = () => {
     },
   ]
   return (
-    <Section>
+    <Section name={t("pricing")}>
       {plans.map((plan, idx) => (
         <PricingCard key={idx} plan={plan} />
       ))}

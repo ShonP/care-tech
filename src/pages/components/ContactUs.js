@@ -1,8 +1,9 @@
 import React from "react"
 import styled, { css } from "styled-components"
+import { useTranslation } from "react-i18next"
 import contactUs from "../../images/contact.svg"
-import Button from "./Button"
-import Section from "./Section"
+import Button from "../../shared/components/Button"
+import Section from "../../shared/components/Section"
 
 const Wrapper = styled(Section)`
   display: flex;
@@ -64,18 +65,21 @@ const TextArea = styled.textarea`
   resize: none;
 `
 
-const ContactUs = () => (
-  <Wrapper>
-    <Form>
-      <Header>דבר איתנו</Header>
-      <Input placeholder="שם"></Input>
-      <Input placeholder="אימייל"></Input>
-      <TextArea placeholder="כתוב את פנייתך כאן"></TextArea>
-      <Button>שלח</Button>
-    </Form>
-    <ImgWrapper>
-      <ContactImg />
-    </ImgWrapper>
-  </Wrapper>
-)
+const ContactUs = () => {
+  const { t } = useTranslation()
+  return (
+    <Wrapper name={t("talkWithUs")}>
+      <Form>
+        <Header>דבר איתנו</Header>
+        <Input placeholder="שם"></Input>
+        <Input placeholder="אימייל"></Input>
+        <TextArea placeholder="כתוב את פנייתך כאן"></TextArea>
+        <Button>שלח</Button>
+      </Form>
+      <ImgWrapper>
+        <ContactImg />
+      </ImgWrapper>
+    </Wrapper>
+  )
+}
 export default ContactUs

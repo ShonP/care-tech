@@ -6,12 +6,12 @@ import styled from "styled-components"
 import Navbar from "../shared/components/Navbar"
 import theme from "../shared/theme"
 import GlobalStyle from "../shared/theme/GlobalStyle"
-import Hero from "../shared/components/Hero"
-import WhatWeLearn from "../shared/components/WhatWeLearn"
-import Pricing from "../shared/components/Pricing"
-import WhatWeDo from "../shared/components/WhatWeDo"
+import Hero from "./components/Hero"
+import WhatWeLearn from "./components/WhatWeLearn"
+import Pricing from "./components/Pricing"
+import WhatWeDo from "./components/WhatWeDo"
 import "../shared/services/i18n"
-import ContactUs from "../shared/components/ContactUs"
+import ContactUs from "./components/ContactUs"
 const Container = styled.div`
   display: flex;
   flex-direction: column;

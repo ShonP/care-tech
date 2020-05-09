@@ -2,12 +2,12 @@ import React from "react"
 import styled, { css } from "styled-components"
 import contactUs from "../../images/contact.svg"
 import Button from "./Button"
+import Section from "./Section"
 
-const Wrapper = styled.div`
+const Wrapper = styled(Section)`
   display: flex;
-
   justify-content: space-between;
-  padding: ${({ theme }) => theme.sizes.siteSpace};
+  background-color: white;
 `
 
 const Form = styled.div`

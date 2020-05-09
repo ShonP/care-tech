@@ -4,22 +4,9 @@ import MiniCard from "./MiniCard"
 import { useTranslation } from "react-i18next"
 import _Section from "./Section"
 
-const Section = styled(_Section)``
-
-const Image = styled.img.attrs(() => ({
-  src: "https://blog.hubspot.com/hubfs/landing-page-design-examples.jpg",
-}))`
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0);
-  width: 30rem;
-  top: calc(100% - 6rem);
-  z-index: 1;
+const Section = styled(_Section)`
+  background-color: white;
 `
-
 const cards = ["react", "css", "js", "nodejs", "html", "express"]
 
 const CardsWrapper = styled.div`

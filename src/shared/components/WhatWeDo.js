@@ -6,6 +6,8 @@ import communication from "../../images/communication.svg"
 import job from "../../images/job.svg"
 import { useTranslation } from "react-i18next"
 
+import Section from './Section'
+
 const Card = styled(_Card)`
   height: 30rem;
   width: 20rem;
@@ -18,12 +20,9 @@ const Card = styled(_Card)`
   }
 `
 
-const Wrapper = styled.div`
+const Wrapper = styled(Section)`
   display: flex;
   flex-direction: column;
-
-  margin-bottom: ${({ theme }) => theme.sizes.siteSpace};
-  margin-top: ${({ theme }) => theme.sizes.siteSpace};
 `
 
 const Cards = styled.div`

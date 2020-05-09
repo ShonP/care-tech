@@ -9,10 +9,6 @@ const Wrapper = styled.div`
   flex-wrap: nowrap;
 `
 
-const Section = ({ name, ...rest }) => (
-  <Element name={name}>
-    <Wrapper {...rest} />
-  </Element>
-)
+const Section = ({ name, ...rest }) => <Wrapper {...rest} />
 
 export default Section

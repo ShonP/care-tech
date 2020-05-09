@@ -65,7 +65,6 @@ const Navbar = () => {
             onSetActive={() => setActiveLink(item)}
             spy
             smooth
-            onSetInactive={() => setActiveLink(null)}
           >
             <Item isSelected={activeLink === item} inverse={y > 0}>
               {item}
@@ -73,7 +72,17 @@ const Navbar = () => {
           </Link>
         ))}
       </ItemsWrapper>
-      <Logo inverse={y > 0}>{`TECH-CARE </>`}</Logo>
+      <Link
+        to={t("header")}
+        duration={500}
+        onSetActive={() => setActiveLink(t("header"))}
+        spy
+        smooth
+      >
+        <Item>
+          <Logo inverse={y > 0}>{`TECH-CARE </Item>`}</Logo>
+        </Item>
+      </Link>
     </Wrapper>
   )
 }

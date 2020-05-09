@@ -18,6 +18,7 @@ const Content = styled.div`
   flex-direction: column;
   justify-content: center;
   flex: 1;
+  z-index: 2;
   & > * {
     margin-bottom: 1.5rem;
 

@@ -50,6 +50,7 @@ const Navbar = () => {
     t("whatWeDo"),
     t("whatWeLearn"),
     t("howItWorks"),
+    t("price"),
     t("talkWithUs"),
   ]
   return (

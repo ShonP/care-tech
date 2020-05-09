@@ -70,7 +70,7 @@ const Pricing = () => {
   ]
   return (
     <Section name={t("price")}>
-      <Header>{t("price")}</Header>
+      <Header isCenter>{t("price")}</Header>
       <CardsWrapper>
         {plans.map((plan, idx) => (
           <PricingCard key={idx} plan={plan} />

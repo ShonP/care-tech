@@ -69,7 +69,7 @@ const WhatWeDo = () => {
   )
   return (
     <Wrapper name={t("whatWeDo")}>
-      <Header>{t("whatWeDo")}</Header>
+      <Header isCenter>{t("whatWeDo")}</Header>
       <Cards>
         {cards.map(({ src, header, subHeader }) => (
           <Card key={header}>

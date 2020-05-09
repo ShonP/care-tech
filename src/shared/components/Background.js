@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components"
 
 const square = keyframes`
     0%   { transform: translateY(0); }
-    100% { transform: translateY(-700px) rotate(600deg); }
+    100% { transform: translateY(-1400px) rotate(600deg); }
     `
 const Wrapper = styled.ul`
   position: absolute;

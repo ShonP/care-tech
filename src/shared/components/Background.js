@@ -41,13 +41,12 @@ const Square = styled.li`
     width: 80px;
     height: 80px;
 
-    animation-delay: 2s;
     animation-duration: 17s;
   }
 
   &:nth-child(3) {
     left: 25%;
-    animation-delay: 4s;
+    animation-delay: 3s;
   }
 
   &:nth-child(4) {
@@ -69,7 +68,7 @@ const Square = styled.li`
     width: 120px;
     height: 120px;
 
-    animation-delay: 3s;
+    animation-delay: 2s;
     background-color: rgba(70, 178, 240, 0.2);
   }
 
@@ -78,7 +77,7 @@ const Square = styled.li`
     width: 160px;
     height: 160px;
 
-    animation-delay: 7s;
+    animation-delay: 4s;
   }
 
   &:nth-child(8) {
@@ -105,7 +104,7 @@ const Square = styled.li`
     width: 160px;
     height: 160px;
 
-    animation-delay: 11s;
+    animation-delay: 6s;
   }
 `
 

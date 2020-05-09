@@ -103,7 +103,7 @@ const Header = styled.div`
   background-color: ${({ theme, type }) => theme.colors[types[type]]};
   display: flex;
   flex-direction: column;
-  padding-top: 1rem;
+  justify-content: center;
 `
 const Title = styled.div`
   font-size: 24px;

@@ -4,9 +4,7 @@ import MiniCard from "./MiniCard"
 import { useTranslation } from "react-i18next"
 import _Section from "./Section"
 
-const Section = styled(_Section)`
-  padding-bottom: 10rem;
-`
+const Section = styled(_Section)``
 
 const Image = styled.img.attrs(() => ({
   src: "https://blog.hubspot.com/hubfs/landing-page-design-examples.jpg",
@@ -40,17 +38,28 @@ const Content = styled.div`
 `
 
 const Header = styled.h1`
-  margin-bottom: 20px;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: ${({ theme }) => theme.colors.primary};
+  margin-bottom: 1.25rem;
+  &::after {
+    content: ""; /* This is necessary for the pseudo element to work. */
+    display: block; /* This will put the pseudo element on its own line. */
+    width: 25%; /* Change this to whatever width you want. */
+    padding-top: 20px; /* This creates some space between the element and the border. */
+    border-bottom: 1px solid ${({ theme }) => theme.colors.primary}; /* This creates the border. Replace black with whatever color you want. */
+  }
 `
 
 const FirstParagraph = styled.p`
+  color: ${({ theme }) => theme.colors.black};
   font-weight: 600;
   margin-bottom: 20px;
   font-size: 1.2rem;
 `
 
 const SecondParagraph = styled.p`
+  color: ${({ theme }) => theme.colors.gray};
   font-size: 1rem;
 `
 const AboutUs = () => {
@@ -67,7 +76,6 @@ const AboutUs = () => {
         <FirstParagraph>{t("whatWeLearnFirstParagraph")}</FirstParagraph>
         <SecondParagraph>{t("whatWeLearnSecondParagraph")}</SecondParagraph>
       </Content>
-      <Image />
     </Section>
   )
 }

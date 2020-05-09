@@ -5,7 +5,6 @@ import _Section from "./Section"
 import _PricingCard from "./PricingCard"
 
 const Section = styled(_Section)`
-  padding-top: 20rem;
 `
 const PricingCard = styled(_PricingCard)`
   flex: 1;

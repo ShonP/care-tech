@@ -26,9 +26,16 @@ const ContactImg = styled.img.attrs(() => ({ src: contactUs }))`
 
 const Header = styled.h1`
   font-size: 2.5rem;
-  font-weight: 500;
-  color: ${({ theme }) => theme.colors.black};
-  line-height: 3rem;
+  font-weight: bold;
+  color: ${({ theme }) => theme.colors.primary};
+  margin-bottom: 1.25rem;
+  &::after {
+    content: ""; /* This is necessary for the pseudo element to work. */
+    display: block; /* This will put the pseudo element on its own line. */
+    width: 25%; /* Change this to whatever width you want. */
+    padding-top: 20px; /* This creates some space between the element and the border. */
+    border-bottom: 1px solid ${({ theme }) => theme.colors.primary}; /* This creates the border. Replace black with whatever color you want. */
+  }
 `
 
 const ImgWrapper = styled.div`
@@ -63,7 +70,7 @@ const ContactUs = () => (
       <Header>דבר איתנו</Header>
       <Input placeholder="שם"></Input>
       <Input placeholder="אימייל"></Input>
-      <TextArea  placeholder="כתוב את פנייתך כאן"></TextArea>
+      <TextArea placeholder="כתוב את פנייתך כאן"></TextArea>
       <Button>שלח</Button>
     </Form>
     <ImgWrapper>

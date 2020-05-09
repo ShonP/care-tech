@@ -19,9 +19,10 @@ const Icon = styled(FontAwesomeIcon)`
 
 const Item = styled(_Item)`
   background-color: ${({ theme, isMenu }) => isMenu && theme.colors.primary};
+  color: ${({ theme, isMenu }) => isMenu && theme.colors.white};
 `
 
-const LanguagePicker = (props) => {
+const LanguagePicker = props => {
   const [isMenu, setIsMenu] = useState(false)
   const { t, i18n } = useTranslation()
   const items = useMemo(

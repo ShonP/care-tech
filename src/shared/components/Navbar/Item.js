@@ -2,6 +2,7 @@ import styled, { css } from "styled-components"
 
 const selectedCss = css`
   background-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.white};
 `
 
 const Item = styled.div`

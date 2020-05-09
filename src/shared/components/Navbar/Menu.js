@@ -10,6 +10,9 @@ const Wrapper = styled.div`
   top: 100%;
   width: 100%;
   background-color: ${({ theme }) => theme.colors.darkPrimary};
+  ${Item} {
+    color: ${({ theme }) => theme.colors.white};
+  }
   z-index: 3;
   box-shadow: 0 8px 6px -6px black;
 `

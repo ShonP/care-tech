@@ -3,6 +3,8 @@ import styled, { keyframes } from "styled-components"
 
 const square = keyframes`
     0%   { transform: translateY(0); }
+    12%{opacity:0;}
+    20%{opacity:1;}
     100% { transform: translateY(-1400px) rotate(600deg); }
     `
 const Wrapper = styled.ul`
@@ -23,7 +25,7 @@ const Square = styled.li`
   height: 40px;
   background-color: rgba(70, 178, 240, 0.15);
   bottom: -160px;
-
+  opacity: 0;
   animation: ${square} 25s infinite;
 
   -webkit-transition-timing-function: linear;

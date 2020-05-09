@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   left: 0;
   right: 0;
   display: flex;
-  z-index: 2;
+  z-index: 3;
   transition: all 0.3s;
   ${({ isScrolled }) => isScrolled && scrolledCss};
 `

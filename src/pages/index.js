@@ -11,7 +11,7 @@ import WhatWeLearn from "../shared/components/WhatWeLearn"
 import Pricing from "../shared/components/Pricing"
 import WhatWeDo from "../shared/components/WhatWeDo"
 import "../shared/services/i18n"
-
+import ContactUs from "../shared/components/ContactUs"
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -41,6 +41,7 @@ const IndexPage = () => {
           <WhatWeDo />
           <WhatWeLearn />
           <Pricing />
+          <ContactUs />
         </Container>
       </ThemeProvider>
     </StyleSheetManager>

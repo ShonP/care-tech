@@ -3,12 +3,14 @@ import styled from "styled-components"
 import enginnerImage from "../../images/enginner.svg"
 import Button from "./Button"
 import { useTranslation } from "react-i18next"
+import Background from "./Background"
 
 const Wrapper = styled.div`
   display: flex;
   padding-left: ${({ theme }) => theme.sizes.siteSpace};
   padding-right: ${({ theme }) => theme.sizes.siteSpace};
-  margin-top: ${({ theme }) => theme.sizes.navbar};
+  padding-top: ${({ theme }) => theme.sizes.navbar};
+  overflow: hidden;
 `
 
 const Content = styled.div`
@@ -42,11 +44,11 @@ const Image = styled.img.attrs(() => ({ src: enginnerImage }))`
   flex: 1.5;
 `
 
-
 const Hero = () => {
   const { t } = useTranslation()
   return (
     <Wrapper>
+      <Background />
       <Content>
         <Header>{t("header")}</Header>
         <SubHeader>{t("subHeader")}</SubHeader>

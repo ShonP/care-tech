@@ -1,11 +1,14 @@
 import React from "react"
 import styled, { keyframes } from "styled-components"
-import Card from './Card';
+import Card from "./Card"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCheck } from "@fortawesome/free-solid-svg-icons"
+import _Button from "./Button"
 
 const types = {
-  front: "lightPrimary",
-  back: "primary",
-  full: "darkPrimary",
+  front: "red",
+  back: "green",
+  full: "primary",
 }
 
 const circleAn = keyframes`
@@ -72,7 +75,10 @@ const Point = styled.div`
   }
 `
 const Wrapper = styled(Card)`
+  transform: scale(${({ type }) => type === "full" && "1.11"});
+  width: 20rem;
   &:hover {
+    transform: scale(${({ type }) => type === "full" && "1.13"});
     ${Circle} {
       box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
       border-width: 5px;
@@ -104,7 +110,7 @@ const Title = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: ${({ theme }) => theme.colors.white};
   position: relative;
 `
 
@@ -132,29 +138,47 @@ const Discount = styled.div`
   color: ${({ theme, type }) => theme.colors[types[type]]};
   margin: 0 40px;
   width: 150px;
+
+  margin-left: auto;
+  margin-right: auto;
 `
 
 const Content = styled.div`
   margin-top: 80px;
-
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  padding-left: 4rem;
+  padding-right: 4rem;
 `
 const Item = styled.div`
   padding: 15px 0 15px 0;
   margin: 0;
-  border-bottom: 1px solid #f2f2f2;
   display: flex;
-  justify-content: center;
-  align-items: center;
+`
+
+const Check = styled(FontAwesomeIcon).attrs(() => ({ icon: faCheck }))`
+  color: ${({ theme, type }) => theme.colors[types[type]]};
+  margin-right: 1rem;
+`
+
+const Button = styled(_Button)`
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  background-color: ${({ theme, type }) => theme.colors[types[type]]};
+`
+
+const ItemWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 `
 
 const PricingCard = ({ plan, className }) => (
   <Wrapper type={plan.type} className={className}>
     <Header type={plan.type}>
-      <Title>{plan.title}</Title>
-      <Point />
+      <Title type={plan.type}>{plan.title}</Title>
       <Circle type={plan.type}>
         <PriceTitle>{plan.price}</PriceTitle>
         <PriceInfo>{plan.priceInfo}</PriceInfo>
@@ -162,7 +186,18 @@ const PricingCard = ({ plan, className }) => (
     </Header>
     <Content>
       {plan.discount && <Discount type={plan.type}>{plan.discount}</Discount>}
-      {plan.items && plan.items.map(item => <Item key={item}>{item}</Item>)}
+      <ItemWrapper>
+        {plan.items &&
+          plan.items.map(item => (
+            <Item key={item}>
+              <Check type={plan.type} />
+              {item}
+            </Item>
+          ))}
+      </ItemWrapper>
+      <Button type={plan.type} isRound>
+        בחר
+      </Button>
     </Content>
   </Wrapper>
 )

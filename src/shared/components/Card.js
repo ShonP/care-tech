@@ -2,7 +2,6 @@ import styled from "styled-components"
 
 const Card = styled.div`
   transition: 0.4s background-color ease;
-  height: 800px;
   background-color: white;
   border-radius: 20px;
   position: relative;

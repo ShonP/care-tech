@@ -3,9 +3,16 @@ import styled from "styled-components"
 import { useTranslation } from "react-i18next"
 import _Section from "../../shared/components/Section"
 import _PricingCard from "../../shared/components/PricingCard"
+import _Header from "../../shared/components/Header"
 
-const Section = styled(_Section)`
+const Header = styled(_Header)`
+  margin-bottom: 4rem;
 `
+const Section = styled(_Section)`
+  flex-direction: column;
+  padding-bottom: 6rem;
+`
+
 const PricingCard = styled(_PricingCard)`
   flex: 1;
   margin-right: 3rem;
@@ -13,6 +20,11 @@ const PricingCard = styled(_PricingCard)`
     margin-right: 0;
   }
 `
+
+const CardsWrapper = styled.div`
+  display: flex;
+`
+
 const Pricing = () => {
   const { t } = useTranslation()
   const plans = [
@@ -57,10 +69,13 @@ const Pricing = () => {
     },
   ]
   return (
-    <Section name={t("pricing")}>
-      {plans.map((plan, idx) => (
-        <PricingCard key={idx} plan={plan} />
-      ))}
+    <Section name={t("price")}>
+      <Header>{t("price")}</Header>
+      <CardsWrapper>
+        {plans.map((plan, idx) => (
+          <PricingCard key={idx} plan={plan} />
+        ))}
+      </CardsWrapper>
     </Section>
   )
 }

@@ -5,11 +5,16 @@ import { useTranslation } from "react-i18next"
 import Button from "../../shared/components/Button"
 import Background from "../../shared/components/Background"
 import Section from "./Section"
+import { media } from "../../shared/theme/media"
 
 const Wrapper = styled(Section)`
   display: flex;
   background-color: white;
   overflow: hidden;
+`
+
+const ImageWrapper = styled.div`
+  flex: 1.5;
 `
 
 const Content = styled.div`
@@ -28,20 +33,30 @@ const Content = styled.div`
 `
 
 const Header = styled.h1`
-  font-size: 3.5rem;
   font-weight: 500;
   color: ${({ theme }) => theme.colors.black};
-  line-height: 3rem;
+
+  font-size: 1.4rem;
+  line-height: 1.5rem;
+  ${media.minTablet`
+    font-size: 3.5rem;
+    line-height: 3rem;
+  `}
 `
 
 const SubHeader = styled.p`
   color: ${({ theme }) => theme.colors.gray};
-  font-size: 1rem;
   line-height: 3rem;
+  font-size: 0.6rem;
+  ${media.minTablet`
+    font-size: 1rem;
+    line-height: 3rem;
+  `}
 `
 
 const Image = styled.img.attrs(() => ({ src: enginnerImage }))`
-  flex: 1.5;
+  max-width: 100%;
+  max-height: 100%;
 `
 
 const Hero = () => {
@@ -54,7 +69,9 @@ const Hero = () => {
         <SubHeader>{t("subHeader")}</SubHeader>
         <Button isRound>{t("startHere")}</Button>
       </Content>
-      <Image />
+      <ImageWrapper>
+        <Image />
+      </ImageWrapper>
     </Wrapper>
   )
 }

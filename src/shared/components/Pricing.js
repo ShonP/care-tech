@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next"
 import _Section from "../../shared/components/Section"
 import _PricingCard from "../../shared/components/PricingCard"
 import _Header from "../../shared/components/Header"
+import { media } from "../../shared/theme/media"
 
 const Header = styled(_Header)`
   margin-bottom: 4rem;
@@ -15,14 +16,30 @@ const Section = styled(_Section)`
 
 const PricingCard = styled(_PricingCard)`
   flex: 1;
-  margin-right: 3rem;
+  width: calc(100% - 10rem);
+  margin-bottom: 5rem;
+  ${media.minTablet`
+    width:20rem;
+    margin-right: 3rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  `}
+
   &:last-child {
-    margin-right: 0;
+    margin-bottom: 0;
   }
 `
 
 const CardsWrapper = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  ${media.minTablet`
+    align-items: flex-start;
+    flex-direction:row;
+  `}
 `
 
 const Pricing = () => {

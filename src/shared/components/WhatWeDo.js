@@ -1,12 +1,13 @@
 import React, { useMemo } from "react"
 import _Card from "../../shared/components/Card"
 import styled from "styled-components"
+import { media } from "../../shared/theme/media"
 import { useTranslation } from "react-i18next"
 import education from "../../images/education.svg"
 import communication from "../../images/communication.svg"
 import job from "../../images/job.svg"
 import Section from "../../shared/components/Section"
-import Header from '../../shared/components/Header';
+import Header from "../../shared/components/Header"
 
 const Card = styled(_Card)`
   height: 30rem;
@@ -14,9 +15,17 @@ const Card = styled(_Card)`
   padding: 2rem;
   flex-direction: column;
   align-items: center;
-  margin-right: 3rem;
+  margin-bottom: 5rem;
+  ${media.minTablet`
+    margin-right: 3rem;
+
+    &:last-child {
+      margin-left: 0;
+    }
+  `}
+
   &:last-child {
-    margin-left: 0;
+    margin-bottom: 0rem;
   }
 `
 
@@ -29,6 +38,10 @@ const Cards = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  ${media.minTablet`
+    flex-direction:row;
+  `}
 `
 
 const Img = styled.img`

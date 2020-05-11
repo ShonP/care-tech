@@ -8,12 +8,12 @@ import nodejs from "../../images/nodejslogo.png"
 import react from "../../images/react.png"
 
 const Wrapper = styled.div`
-  width: 184px;
-  height: 184px;
+  width: 10rem;
+  height: 10rem;
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
-  padding: 10px;
+  padding: 0.6rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,8 +27,8 @@ const Wrapper = styled.div`
 
 const Icon = styled.img`
   margin-bottom: 1.5rem;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2rem;
+  height: 2rem;
 `
 
 const icons = { css, express, html, js, nodejs, react }

@@ -80,7 +80,7 @@ const Navbar = () => {
         smooth
       >
         <Item>
-          <Logo inverse={y > 0}>{`TECH-CARE </Item>`}</Logo>
+          <Logo inverse={y > 0}>{`</> TECH-CARE`}</Logo>
         </Item>
       </Link>
     </Wrapper>

@@ -5,7 +5,7 @@ const square = keyframes`
     0%   { transform: translateY(0); }
     12%{opacity:0;}
     20%{opacity:1;}
-    100% { transform: translateY(-1400px) rotate(600deg); }
+    100% { transform: translateY(-800rem) rotate(600deg); }
     `
 const Wrapper = styled.ul`
   position: absolute;
@@ -21,8 +21,8 @@ const Square = styled.li`
   position: absolute;
   list-style: none;
   display: block;
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   background-color: rgba(70, 178, 240, 0.15);
   bottom: -160px;
   opacity: 0;
@@ -51,8 +51,8 @@ const Square = styled.li`
 
   &:nth-child(4) {
     left: 40%;
-    width: 60px;
-    height: 60px;
+    width: 4rem;
+    height: 4rem;
 
     animation-duration: 22s;
 
@@ -74,16 +74,16 @@ const Square = styled.li`
 
   &:nth-child(7) {
     left: 32%;
-    width: 160px;
-    height: 160px;
+    width: 10rem;
+    height: 10rem;
 
     animation-delay: 4s;
   }
 
   &:nth-child(8) {
     left: 55%;
-    width: 20px;
-    height: 20px;
+    width: 1.5rem;
+    height: 1.5rem;
 
     animation-delay: 15s;
     animation-duration: 40s;
@@ -91,8 +91,8 @@ const Square = styled.li`
 
   &:nth-child(9) {
     left: 25%;
-    width: 10px;
-    height: 10px;
+    width: 0.8rem;
+    height: 0.8rem;
 
     animation-delay: 2s;
     animation-duration: 40s;
@@ -101,8 +101,8 @@ const Square = styled.li`
 
   &:nth-child(10) {
     left: 90%;
-    width: 160px;
-    height: 160px;
+    width: 10rem;
+    height: 10rem;
 
     animation-delay: 6s;
   }

@@ -1,9 +1,20 @@
 import { createGlobalStyle, css } from "styled-components"
+import { media } from "./media"
 
 const defaultStyles = css`
   margin: 0px;
   font-family: "Barlow", "Helvetica", sans-serif;
-  font-size: 16px;
+  font-size: 6px;
+
+  ${media.minTablet`
+    font-size: 6px;
+  `}
+  ${media.minSmallTablet`
+    font-size: 12px;
+  `}
+  ${media.minSmallDesktop`
+    font-size: 16px;
+  `}
 `
 
 const globalStyles = css`
@@ -19,7 +30,7 @@ const globalStyles = css`
 
   html {
     overflow-y: scroll;
-    font-size: 16px;
+    ${defaultStyles}
   }
 
   html,

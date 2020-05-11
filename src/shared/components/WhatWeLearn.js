@@ -14,7 +14,6 @@ const CardsWrapper = styled.div`
   flex: 1;
   display: flex;
   flex-wrap: wrap;
-  min-width: 368px;
 `
 
 const Content = styled.div`

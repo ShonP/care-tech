@@ -29,14 +29,15 @@ const circleAn = keyframes`
   `
 
 const Circle = styled.div`
-  width: 120px;
-  height: 120px;
+  width: 7rem;
+  height: 7rem;
   border-radius: 100%;
-  left: calc(50% - 60px);
-  top: 60%;
+  right: 50%;
+  top: 30%;
+  transform: translate(50%, 50%);
   background-color: white;
   position: absolute;
-  border: 10px solid ${({ theme, type }) => theme.colors[types[type]]};
+  border: 0.5rem solid ${({ theme, type }) => theme.colors[types[type]]};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,7 +51,7 @@ const Point = styled.div`
   height: 30px;
   border-radius: 50%;
   text-align: center;
-  border: 7px solid #505050;
+  border: 0.5rem solid #505050;
   margin: 0 auto;
   position: relative;
   transition: all 0.4s cubic-bezier(0.37, 0.26, 0.35, 1);
@@ -60,7 +61,7 @@ const Point = styled.div`
     content: "";
     border-top: 3px solid #505050;
     border-top-style: dotted;
-    width: 90px;
+    width: 6rem;
     top: 8px;
     transition: transform 300ms ease-in-out;
     transform: scaleX(0);
@@ -77,6 +78,7 @@ const Point = styled.div`
 const Wrapper = styled(Card)`
   transform: scale(${({ type }) => type === "full" && "1.11"});
   width: 20rem;
+
   &:hover {
     transform: scale(${({ type }) => type === "full" && "1.13"});
     ${Circle} {
@@ -97,7 +99,7 @@ const Wrapper = styled(Card)`
 
 const Header = styled.div`
   width: 100%;
-  height: 150px;
+  height: 9rem;
   position: relative;
   border-radius: 20px 20px 0 0;
   background-color: ${({ theme, type }) => theme.colors[types[type]]};
@@ -106,7 +108,7 @@ const Header = styled.div`
   justify-content: center;
 `
 const Title = styled.div`
-  font-size: 24px;
+  font-size: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -116,13 +118,13 @@ const Title = styled.div`
 
 const PriceTitle = styled.span`
   display: block;
-  font-size: 28px;
+  font-size: 1.8rem;
   font-weight: bold;
 `
 
 const PriceInfo = styled.span`
   display: block;
-  font-size: 12px;
+  font-size: 0.6rem;
   font-weight: bold;
   color: gray;
 `
@@ -137,14 +139,13 @@ const Discount = styled.div`
   overflow: hidden;
   color: ${({ theme, type }) => theme.colors[types[type]]};
   margin: 0 40px;
-  width: 150px;
 
   margin-left: auto;
   margin-right: auto;
 `
 
 const Content = styled.div`
-  margin-top: 80px;
+  margin-top: 5rem;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -152,7 +153,7 @@ const Content = styled.div`
   padding-right: 4rem;
 `
 const Item = styled.div`
-  padding: 15px 0 15px 0;
+  padding: 1rem 0 1rem 0;
   margin: 0;
   display: flex;
 `

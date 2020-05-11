@@ -15,7 +15,7 @@ const Card = styled(_Card)`
   padding: 2rem;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
   ${media.minTablet`
     margin-right: 3rem;
 

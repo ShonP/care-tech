@@ -3,7 +3,7 @@ import styled from "styled-components"
 import MiniCard from "../../shared/components/MiniCard"
 import { useTranslation } from "react-i18next"
 import _Section from "../../shared/components/Section"
-import Header from '../../shared/components/Header';
+import Header from "../../shared/components/Header"
 
 const Section = styled(_Section)`
   background-color: white;
@@ -14,6 +14,7 @@ const CardsWrapper = styled.div`
   flex: 1;
   display: flex;
   flex-wrap: wrap;
+  min-width: 20rem;
 `
 
 const Content = styled.div`

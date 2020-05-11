@@ -4,11 +4,8 @@ import { media } from "./media"
 const defaultStyles = css`
   margin: 0px;
   font-family: "Barlow", "Helvetica", sans-serif;
-  font-size: 6px;
+  font-size: 8px;
 
-  ${media.minTablet`
-    font-size: 6px;
-  `}
   ${media.minSmallTablet`
     font-size: 12px;
   `}

@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { media } from "../../shared/theme/media"
 import css from "../../images/css.png"
 import express from "../../images/expressjslogo.png"
 import html from "../../images/html5.png"
@@ -8,12 +9,17 @@ import nodejs from "../../images/nodejslogo.png"
 import react from "../../images/react.png"
 
 const Wrapper = styled.div`
-  width: 10rem;
-  height: 10rem;
+  width: 6rem;
+  height: 6rem;
+  padding: 0.3rem;
+  ${media.minTablet`
+    width: 10rem;
+    height: 10rem;
+    padding: 0.6rem;
+  `}
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
-  padding: 0.6rem;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -4,7 +4,8 @@ const Button = styled.div`
   padding-top: 1px;
   padding-right: 24px;
   padding-left: 24px;
-  background-color: ${({ type = "primary", theme }) => theme.colors[type]};
+  background-color: ${({ type = "primary", theme, disabled }) =>
+    disabled ? "gray" : theme.colors[type]};
   color: #fff;
   font-weight: 500;
   text-decoration: none;

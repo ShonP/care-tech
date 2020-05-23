@@ -32,6 +32,17 @@ const IndexPage = () => {
       setStylisPlugins(i18n.dir(l) === "rtl" ? rtlPlugin : emptyArray)
     })
   }, [i18n])
+  const [name, setName] = useState("")
+  const [content, setContent] = useState("")
+  const onPricingClick = val => {
+    setContent(val)
+    window.scrollTo({
+      left: 0,
+      top: document.body.scrollHeight,
+      behavior: "smooth",
+    })
+  }
+
   return (
     <StyleSheetManager stylisPlugins={stylisPlugins}>
       <ThemeProvider theme={theme}>
@@ -41,8 +52,13 @@ const IndexPage = () => {
           <Hero />
           <WhatWeDo />
           <WhatWeLearn />
-          <Pricing />
-          <ContactUs />
+          <Pricing onClick={onPricingClick} />
+          <ContactUs
+            name={name}
+            setName={setName}
+            content={content}
+            setContent={setContent}
+          />
         </Container>
       </ThemeProvider>
     </StyleSheetManager>

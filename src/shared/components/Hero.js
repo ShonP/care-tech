@@ -6,6 +6,7 @@ import Button from "../../shared/components/Button"
 import Background from "../../shared/components/Background"
 import Section from "./Section"
 import { media } from "../../shared/theme/media"
+import { Link } from "react-scroll"
 
 const Wrapper = styled(Section)`
   display: flex;
@@ -67,7 +68,9 @@ const Hero = () => {
       <Content>
         <Header>{t("header")}</Header>
         <SubHeader>{t("subHeader")}</SubHeader>
-        <Button isRound>{t("startHere")}</Button>
+        <Link smooth to={t("whatWeDo")}>
+          <Button isRound>{t("startHere")}</Button>
+        </Link>
       </Content>
       <ImageWrapper>
         <Image />

@@ -42,13 +42,13 @@ const CardsWrapper = styled.div`
   `}
 `
 
-const Pricing = () => {
+const Pricing = ({onClick}) => {
   const { t } = useTranslation()
   const plans = [
     {
-      price: `250₪`,
+      price: `990₪`,
       title: "צד לקוח",
-      priceInfo: `/ ${t("month")}`,
+      priceInfo: `/ ${t("4meet")}`,
       items: [
         "השגת קשרים והצעות העבודה",
         "יחס אישי והתחברות לקהילה",
@@ -59,10 +59,10 @@ const Pricing = () => {
     },
 
     {
-      price: `300₪`,
+      price: `1190₪`,
       discount: `50% ${t("discount")}`,
       title: "פול סטאק",
-      priceInfo: `/ ${t("month")}`,
+      priceInfo: `/ ${t("6meet")}`,
       items: [
         "השגת קשרים והצעות העבודה",
         "יחס אישי והתחברות לקהילה",
@@ -73,9 +73,9 @@ const Pricing = () => {
       type: "full",
     },
     {
-      price: `350₪`,
+      price: `1590₪`,
       title: "מובייל",
-      priceInfo: `/ ${t("month")}`,
+      priceInfo: `/ ${t("7meet")}`,
       items: [
         "השגת קשרים והצעות העבודה",
         "יחס אישי והתחברות לקהילה",
@@ -90,7 +90,7 @@ const Pricing = () => {
       <Header isCenter>{t("price")}</Header>
       <CardsWrapper>
         {plans.map((plan, idx) => (
-          <PricingCard key={idx} plan={plan} />
+          <PricingCard key={idx} onClick={onClick} plan={plan} />
         ))}
       </CardsWrapper>
     </Section>

@@ -176,7 +176,7 @@ const ItemWrapper = styled.div`
   flex: 1;
 `
 
-const PricingCard = ({ plan, className }) => (
+const PricingCard = ({ plan, className, onClick }) => (
   <Wrapper type={plan.type} className={className}>
     <Header type={plan.type}>
       <Title type={plan.type}>{plan.title}</Title>
@@ -196,7 +196,7 @@ const PricingCard = ({ plan, className }) => (
             </Item>
           ))}
       </ItemWrapper>
-      <Button type={plan.type} isRound>
+      <Button type={plan.type} isRound onClick={() => onClick(plan.title)}>
         בחר
       </Button>
     </Content>

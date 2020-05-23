@@ -16,17 +16,19 @@ const Card = styled(_Card)`
   flex-direction: column;
   align-items: center;
   margin-bottom: 3rem;
+
+  &:last-child {
+    margin-bottom: 0rem;
+  }
   ${media.minTablet`
     margin-right: 3rem;
 
     &:last-child {
       margin-left: 0;
+      margin-bottom: 3rem;
     }
-  `}
 
-  &:last-child {
-    margin-bottom: 0rem;
-  }
+  `}
 `
 
 const Wrapper = styled(Section)`

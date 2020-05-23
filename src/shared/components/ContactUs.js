@@ -52,16 +52,36 @@ const TextArea = styled.textarea`
   resize: none;
 `
 
-const ContactUs = () => {
+const Anchor = styled.a`
+  ${({ disabled }) =>
+    `
+  pointer-events: none;
+  cursor: default;`}
+`
+
+const ContactUs = ({ name, content, setName, setContent }) => {
   const { t } = useTranslation()
   return (
     <Wrapper name={t("talkWithUs")}>
       <Form>
         <Header>דבר איתנו</Header>
-        <Input placeholder="שם"></Input>
-        <Input placeholder="אימייל"></Input>
-        <TextArea placeholder="כתוב את פנייתך כאן"></TextArea>
-        <Button>שלח</Button>
+        <Input
+          required
+          value={name}
+          onChange={({ target: { value } }) => setName(value)}
+          placeholder="שם"
+        ></Input>
+        <TextArea
+          value={content}
+          onChange={({ target: { value } }) => setContent(value)}
+          placeholder="כתוב את פנייתך כאן"
+        ></TextArea>
+        <Anchor
+          disabled={!name || !content}
+          href={`mailto:techcaretoday@gmail.com?subject=${name}&body=${content}`}
+        >
+          <Button disabled={!name || !content}>שלח</Button>
+        </Anchor>
       </Form>
       <ImgWrapper>
         <ContactImg />
